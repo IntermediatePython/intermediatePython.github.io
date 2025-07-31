@@ -103,13 +103,31 @@ So if you want to use all three of these in functions then the order is
 When to use them?
 ^^^^^^^^^^^^^^^^^
 
-It really depends on what your requirements are. The most common use
-case is when making function decorators (discussed in another chapter).
-Moreover it can be used in monkey patching as well. Monkey patching
-means modifying some code at runtime. Consider that you have a class
-with a function called ``get_info`` which calls an API and returns the
-response data. If we want to test it we can replace the API call with
-some test data. For instance:
+It really depends on what your requirements are. A very simple use is
+the instantiation without declaring any explicit argument. The first 
+example uses ``None`` but you can set any default value. Important here
+is not to use the ``\*\*`` when getting the argument value.
+
+.. code:: python
+
+    class A:
+        def __init__(self, **ka):
+            self.fruit = ka['fruit'] if 'fruit' in ka else None
+            self.car = ka['car'] if 'car' in ka else None
+
+    a = A(fruit='banana', car='vw')
+    b = A(fruit='mango')
+    print(a.__dict__, b.__dict__)
+
+    
+# {'fruit': 'banana', 'car': 'vw'} {'fruit': 'mango', 'car': None}
+
+The most common use case is when making function decorators (discussed 
+in another chapter). Moreover it can be used in monkey patching as well. 
+Monkey patching means modifying some code at runtime. Consider that you 
+have a class with a function called ``get_info`` which calls an API and 
+returns the response data. If we want to test it we can replace the API 
+call with some test data. For instance:
 
 .. code:: python
 
