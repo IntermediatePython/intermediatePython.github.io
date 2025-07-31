@@ -92,13 +92,29 @@ function. Here's how to do it:
     arg2: two
     arg3: 3
 
-**Order of using \*args \*\*kwargs and formal args**
+**Order of using \*args \*\*kwargs and formal positional and keyword args**
 
-So if you want to use all three of these in functions then the order is
+So if you want to use all four of these in functions then the order is
 
 .. code:: python
 
-    some_func(fargs, *args, **kwargs)
+    some_func(fargs, *args, key=value, **kwargs)
+
+    def another_func(a, b, *args, fruit="banana", car="vw", **kwargs):
+        # do something here
+        pass
+
+    # call it elegantly
+    another_func(1, 2, 3, 4, 5, 6, fruit="mango", car="fiat", animal="lion")
+
+    # formal positional arguments: a=1, b=2
+    # *args is a tuple (3,4,5,6,)
+    # formal keyword arguments: fruit and car
+    # **kwargs as a dict {animal: "lion"}
+
+Theoretically \*args and \*\*kwargs can be become how long as your memory (but
+not infinite). Exceeding your system's available memory limits can raise a 
+MemoryError exception.
 
 When to use them?
 ^^^^^^^^^^^^^^^^^
