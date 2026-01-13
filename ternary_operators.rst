@@ -50,7 +50,7 @@ The above example is not widely used and is generally disliked by
 Pythonistas for not being Pythonic. It is also easy to confuse where to
 put the true value and where to put the false value in the tuple.
 
-Another reason to avoid using a tupled ternery is that it results in
+Another reason to avoid using a tupled ternary is that it results in
 both elements of the tuple being evaluated, whereas the if-else
 ternary operator does not.
 
@@ -72,12 +72,12 @@ raise an exception based on the condition, or if either case is a
 computation-heavy method, using tuples is best avoided.
 
 
-**ShortHand Ternary**
+**Shorthand Ternary**
 
-In python there is also the shorthand ternary tag which is a shorter version of the 
+In Python there is also the shorthand ternary tag which is a shorter version of the 
 normal ternary operator you have seen above. 
 
-Syntax was introduced in Python 2.5 and can be used in python 2.5 or greater.
+Syntax was introduced in Python 2.5 and can be used in Python 2.5 or greater.
 
 **Example**
 
