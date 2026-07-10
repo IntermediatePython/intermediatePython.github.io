@@ -10,7 +10,7 @@ something and have an automatic counter. Here is an example:
     
     my_list = ['apple', 'banana', 'grapes', 'pear']
     for counter, value in enumerate(my_list):
-        print counter, value
+        print(counter, value)
 
     # Output:
     # 0 apple
